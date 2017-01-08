@@ -3,7 +3,6 @@ import mock
 import unittest
 
 
-
 class TestPyYtcast(unittest.TestCase):
     def test_get_feeds(self):
         test_result = pyytcast.get_feeds(config_name='test_feeds.conf')
@@ -12,7 +11,6 @@ class TestPyYtcast(unittest.TestCase):
                     'test test': {'channel_id': 'another_test_id'}}
 
         self.assertEqual(expected, test_result)
-
 
     @mock.patch('feedparser.parse')
     def test_get_latest_entry(self, mock_feedparser_call):

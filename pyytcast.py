@@ -25,8 +25,9 @@ def get_latest_entry(feeds):
     returns a list of youtube urls from the latest entry"""
     results = []
     for feed in feeds:
-        parsed_feed = feedparser.parse("{}{}".format(YOUTUBE_RSS_URL,
-                                                     feeds[feed]['channel_id']))
+        parsed_feed = feedparser.parse(
+            "{}{}".format(YOUTUBE_RSS_URL,
+                          feeds[feed]['channel_id']))
         if parsed_feed and len(parsed_feed.entries) > 0:
             results.append(parsed_feed.entries[0].link)
 
