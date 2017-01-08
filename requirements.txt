@@ -1,0 +1,6 @@
+feedparser
+youtube-dl
+feedgen
+moviepy
+ConfigParser
+pytest
