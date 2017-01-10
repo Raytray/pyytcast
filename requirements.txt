@@ -1,5 +1,4 @@
+ConfigParser
+feedgen
 feedparser
 youtube-dl
-feedgen
-moviepy
-ConfigParser
