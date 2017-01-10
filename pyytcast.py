@@ -55,13 +55,13 @@ def generate_feed(channel_id):
 def download_new_entries(link):
     """Download first 5 entries if not yet downloaded."""
     youtube_dl_options = {'format': 'bestaudio',
-                      'postprocessors': [{
-                          'key': 'FFmpegExtractAudio',
-                          'preferredcodec': 'mp3',
-                          'preferredquality': '192'
-                      }],
-                      'download_archive': 'downloaded-videos.log',
-                      'outtmpl': './downloads/%(id)s.%(ext)s'}
+                          'postprocessors': [{
+                              'key': 'FFmpegExtractAudio',
+                              'preferredcodec': 'mp3',
+                              'preferredquality': '192'
+                          }],
+                          'download_archive': 'downloaded-videos.log',
+                          'outtmpl': './downloads/%(id)s.%(ext)s'}
     with youtube_dl.YoutubeDL(youtube_dl_options) as ydl:
         ydl.download([link])
 
