@@ -16,6 +16,7 @@ def main():
                 to_delete.remove(file_name)
 
     for file_name in to_delete:
+        print("removing {}".format(file_name)
         os.remove("{}/{}/{}".format(mypath, downloads_folder, file_name))
 
 if __name__ == "__main__":
