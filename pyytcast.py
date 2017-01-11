@@ -41,8 +41,9 @@ def generate_feed(channel_id):
         feed_entry.id(entry.yt_videoid)
         feed_entry.title(entry.title)
         feed_entry.description(entry.summary)
-        feed_entry.enclosure('https://files.raytray.io/downloads/{}.mp3'.format(entry.yt_videoid),
-                             0, 'audio/mpeg')
+        feed_entry.enclosure(
+            'https://files.raytray.io/downloads/{}.mp3'.format(
+                entry.yt_videoid), 0, 'audio/mpeg')
 
         generated_feed.add_entry(feed_entry)
 

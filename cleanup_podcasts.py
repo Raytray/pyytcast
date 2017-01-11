@@ -15,7 +15,6 @@ def main():
             if file_name in open("{}/{}".format(mypath, feed_name)).read():
                 to_delete.remove(file_name)
 
-
     for file_name in to_delete:
         os.remove("{}/{}/{}".format(mypath, downloads_folder, file_name))
 
