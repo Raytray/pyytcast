@@ -9,8 +9,8 @@ config = configparser.ConfigParser()
 config.read('config.conf')
 
 MP3_FOLDER = config.get('paths', 'mp3_folder')
-URL = config.get('paths', 'URL')
-DEPLOY_PATH = config.get('paths', 'DEPLOY_PATH')
+URL = config.get('paths', 'url')
+DEPLOY_PATH = config.get('paths', 'deploy_path')
 
 
 def get_channel_ids():
