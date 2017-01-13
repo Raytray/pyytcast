@@ -111,7 +111,5 @@ def main():
     cleanup_old_files(files_to_keep)
 
 
-
-
 if __name__ == '__main__':
     main()
