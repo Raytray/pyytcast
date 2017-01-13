@@ -47,7 +47,7 @@ def generate_feed(channel_id):
         files_to_keep.append('{}.mp3'.format(entry.yt_videoid))
 
     feed_name = '{}.xml'.format(channel_id)
-    generated_feed.rss_file(feed_name)
+    generated_feed.rss_file('{}/'.format(DEPLOY_PATH, feed_name))
     files_to_keep.append(feed_name)
 
     return files_to_keep
