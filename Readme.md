@@ -21,8 +21,7 @@ deploy_path=./
 url=http://localhost/
 ```
 
-```channel_ids``` indicates the channel ids that channels that the service will fetch. A channel id can typically be found by going to a youtube channel's home page.
-
-```mp3_folder``` indicates where the mp3 files should be downloaded to.
-```deploy_path``` indicates where the feeds would be moved to. This project expects that the mp3_folder is a subdirectory to the ```deploy_path```
-```url``` is the host of the files.
+* ```channel_ids``` indicates the channel ids that channels that the service will fetch. A channel id can typically be found by going to a youtube channel's home page.
+* ```mp3_folder``` indicates where the mp3 files should be downloaded to.
+* ```deploy_path``` indicates where the feeds would be moved to. This project expects that the mp3_folder is a subdirectory to the ```deploy_path```
+* ```url``` is the host of the files.
