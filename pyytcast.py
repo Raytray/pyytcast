@@ -2,6 +2,7 @@ import configparser
 import feedparser
 import os
 import youtube_dl
+import pprint
 
 from feedgen.feed import FeedGenerator
 
@@ -29,6 +30,8 @@ def generate_feed(channel_id):
     print("Generating feed for {}".format(channel_id))
     parsed_feed = feedparser.parse('{}{}'.format(
         'https://www.youtube.com/feeds/videos.xml?channel_id=', channel_id))
+
+    pprint.pprint(parsed_feed)
 
     generated_feed = setup_feed(channel_id, parsed_feed.feed.get('title'))
 
