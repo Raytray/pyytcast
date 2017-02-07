@@ -2,7 +2,6 @@ import configparser
 import feedparser
 import os
 import youtube_dl
-import pprint
 
 from feedgen.feed import FeedGenerator
 
@@ -31,10 +30,10 @@ def generate_feed(channel_id):
     parsed_feed = feedparser.parse('{}{}'.format(
         'https://www.youtube.com/feeds/videos.xml?channel_id=', channel_id))
 
-    pprint.pprint(parsed_feed)
+    if parsed_feed.status != 200:
+        continue;
 
-    generated_feed = setup_feed(channel_id, parsed_feed.feed.get('title',
-                                                                 channel_id))
+    generated_feed = setup_feed(channel_id, parsed_feed.feed.get('title'))
 
     files_to_keep = []
     for entry in parsed_feed.entries[:5]:
