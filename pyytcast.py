@@ -31,7 +31,7 @@ def generate_feed(channel_id):
         'https://www.youtube.com/feeds/videos.xml?channel_id=', channel_id))
 
     if parsed_feed.status != 200:
-        continue;
+        return
 
     generated_feed = setup_feed(channel_id, parsed_feed.feed.get('title'))
 
