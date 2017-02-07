@@ -26,10 +26,15 @@ def generate_feed(channel_id):
     """Given a channel id, obtain the youtube rss feed.
     Download any new entries, convert to audio.
     Attach and publish a feed for it."""
+    print("Generating feed for {}".format(channel_id))
     parsed_feed = feedparser.parse('{}{}'.format(
         'https://www.youtube.com/feeds/videos.xml?channel_id=', channel_id))
 
-    generated_feed = setup_feed(channel_id, parsed_feed.feed.title)
+    channel_title = ""
+    if parsed_feed.feed.title is not None:
+        channel_title = parsed_feed.feed.title
+
+    generated_feed = setup_feed(channel_id, channel_title)
 
     files_to_keep = []
     for entry in parsed_feed.entries[:5]:
