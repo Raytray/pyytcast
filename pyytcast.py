@@ -33,7 +33,8 @@ def generate_feed(channel_id):
 
     pprint.pprint(parsed_feed)
 
-    generated_feed = setup_feed(channel_id, parsed_feed.feed.get('title'))
+    generated_feed = setup_feed(channel_id, parsed_feed.feed.get('title',
+                                                                 channel_id))
 
     files_to_keep = []
     for entry in parsed_feed.entries[:5]:
